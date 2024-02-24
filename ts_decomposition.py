@@ -14,5 +14,9 @@ ts_monthly = ts.resample('M').sum()
 decompose = STL(ts_monthly)
 result = decompose.fit()
 
+trend = result.trend
+seasonal = result.seasonal
+residual = result.resid
+
 result.plot()
 plt.show()
